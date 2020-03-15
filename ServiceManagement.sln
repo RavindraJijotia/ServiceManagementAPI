@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{62C65FB6-9
 		ReadMe.md = ReadMe.md
 		Docs\Service Categories.postman_requests.json = Docs\Service Categories.postman_requests.json
 		Docs\Service Details.postman_requests.json = Docs\Service Details.postman_requests.json
-		..\..\..\..\Users\ravin\OneDrive\Desktop\Service Management API.png = ..\..\..\..\Users\ravin\OneDrive\Desktop\Service Management API.png
+		..\..\..\..\Users\ravin\OneDrive\Desktop\ServiceManagementAPI.png = ..\..\..\..\Users\ravin\OneDrive\Desktop\ServiceManagementAPI.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{76E7A505-AA96-4556-8DC4-C9E72730BD7B}"
