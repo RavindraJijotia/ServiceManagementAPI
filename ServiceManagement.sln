@@ -5,7 +5,6 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{62C65FB6-9C39-47AE-8B52-F6056B22A26E}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Users\ravin\OneDrive\Desktop\ng6lotto.PNG = ..\..\..\..\Users\ravin\OneDrive\Desktop\ng6lotto.PNG
 		ReadMe.md = ReadMe.md
 		Docs\Service Categories.postman_requests.json = Docs\Service Categories.postman_requests.json
 		Docs\Service Details.postman_requests.json = Docs\Service Details.postman_requests.json
