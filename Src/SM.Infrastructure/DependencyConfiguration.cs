@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SM.Application.Interfaces;
+using SM.Common;
 using SM.Infrastructure.Mappings;
 using SM.Infrastructure.Services;
 using System.Reflection;
@@ -17,9 +18,7 @@ namespace SM.Infrastructure
             services.AddTransient<ISampleDataSeeder, SampleDataSeeder>();
             services.AddTransient<IServiceCategoryService, ServiceCategoryService>();
             services.AddTransient<IServiceDetailService, ServiceDetailService>();
-
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(configuration.GetConnectionString("NorthwindDatabase")));
+            services.AddTransient<IDateTime, ServerDateTime>();
 
             return services;
         }

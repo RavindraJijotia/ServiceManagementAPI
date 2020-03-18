@@ -43,10 +43,7 @@ namespace SM.WebApi
             services.AddHttpContextAccessor();
 
             services.AddControllers(option => option.ReturnHttpNotAcceptable = true)
-                .AddNewtonsoftJson()
-                //.AddNewtonsoftJson(o => {
-                //    o.SerializerSettings.ContractResolver = new DefaultContractResolver();
-                //})
+                .AddNewtonsoftJson()                
                 .AddXmlDataContractSerializerFormatters()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ISMDbContext>());
 

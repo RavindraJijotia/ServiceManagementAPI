@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Routing;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using Microsoft.Extensions.Logging;
 using SM.Application.Interfaces;
 using SM.Application.Models;
 using SM.Application.ResourceParameters;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace SM.WebApi.Controllers
@@ -21,11 +17,15 @@ namespace SM.WebApi.Controllers
     {
         private readonly IServiceCategoryService _serviceCategoryService;
         private readonly LinkGenerator _linkGenerator;
+        private readonly ILogger<ServiceCategoriesController> _logger;
 
-        public ServiceCategoriesController(IServiceCategoryService serviceCategoryService, LinkGenerator linkGenerator)
+        public ServiceCategoriesController(IServiceCategoryService serviceCategoryService, 
+            LinkGenerator linkGenerator, 
+            ILogger<ServiceCategoriesController> logger)
         {
             _serviceCategoryService = serviceCategoryService;
             _linkGenerator = linkGenerator;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -40,6 +40,7 @@ namespace SM.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
@@ -50,13 +51,13 @@ namespace SM.WebApi.Controllers
             try
             {
                 var result = await _serviceCategoryService.GetServiceCategoryAsync(id, includeServices);
-
                 if (result == null) return NotFound();
 
                 return StatusCode(StatusCodes.Status200OK, result);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
@@ -78,6 +79,7 @@ namespace SM.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
@@ -103,6 +105,7 @@ namespace SM.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
@@ -120,6 +123,7 @@ namespace SM.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
 

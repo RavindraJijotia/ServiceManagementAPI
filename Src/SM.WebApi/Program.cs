@@ -71,6 +71,11 @@ namespace SM.WebApi
                         config.AddCommandLine(args);
                     }
                 })
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                    logging.AddConsole();
+                })
                 .UseStartup<Startup>();
 
     }
